@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Table]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Title] NVARCHAR(50) NOT NULL, 
+    [Author] NVARCHAR(50) NOT NULL, 
+    [DatePublished] DATETIME NOT NULL
+)
