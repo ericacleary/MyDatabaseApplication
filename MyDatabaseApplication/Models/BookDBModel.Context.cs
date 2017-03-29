@@ -9,22 +9,20 @@
 
 namespace MyDatabaseApplication.Models
 {
-    using System;
     using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    
+
     public partial class BookDatabaseEntities1 : DbContext
     {
+        public void Context()
+        {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookDatabaseEntities1>());
+        }
+
         public BookDatabaseEntities1()
             : base("name=BookDatabaseEntities1")
         {
         }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
-    
+
         public virtual DbSet<Table> Tables { get; set; }
     }
 }
