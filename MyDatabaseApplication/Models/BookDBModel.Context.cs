@@ -13,14 +13,11 @@ namespace MyDatabaseApplication.Models
 
     public partial class BookDatabaseEntities1 : DbContext
     {
-        public void Context()
-        {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookDatabaseEntities1>());
-        }
 
         public BookDatabaseEntities1()
             : base("name=BookDatabaseEntities1")
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookDatabaseEntities1>());
         }
 
         public virtual DbSet<Table> Tables { get; set; }
