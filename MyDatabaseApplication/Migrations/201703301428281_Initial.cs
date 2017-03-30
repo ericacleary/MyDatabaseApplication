@@ -8,6 +8,21 @@ namespace MyDatabaseApplication.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Table",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Title = c.String(nullable: false, maxLength: 50),
+                        Author = c.String(nullable: false, maxLength: 50),
+                        DatePublished = c.DateTime(nullable: false)
+                     })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Title, unique: true, name: "Title")
+                .Index(t => t.Author, unique: true, name: "Author")
+                .Index(t => t.DatePublished, unique: true, name: "Date Published");
+
+
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
