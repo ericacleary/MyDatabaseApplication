@@ -17,7 +17,7 @@ namespace MyDatabaseApplication.Models
         public BookDatabaseEntities1()
             : base("name=BookDatabaseEntities1")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BookDatabaseEntities1>());
+            Database.SetInitializer<BookDatabaseEntities1>(null);
         }
 
         public virtual DbSet<Table> Tables { get; set; }
